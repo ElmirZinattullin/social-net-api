@@ -1,0 +1,63 @@
+version: '2'
+
+services:
+
+  app:
+    env_file:
+      .env
+    build:
+      context: app
+    stop_signal: SIGKILL
+    ports:
+      - 8000:8000
+    networks:
+      - mynet
+    depends_on:
+      - database
+    volumes:
+      - ./static:/static
+
+  database:
+    image: postgres
+
+    stop_signal: SIGKILL
+    volumes:
+      - mydata:/var/lib/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      - log_destination=stderr
+      - logging_collector=on
+      - log_directory=log/
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_DB=${DATABASE}
+    networks:
+      - mynet
+
+  static-server:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    stop_signal: SIGKILL
+    ports:
+      - 80:80
+    networks:
+      - mynet
+    depends_on:
+      - database
+    volumes:
+      - ./static:/usr/share/nginx/html
+    env_file:
+      .env
+
+networks:
+  mynet:
+
+volumes:
+  mydata:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DATABASE_PATH}
