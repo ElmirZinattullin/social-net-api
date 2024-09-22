@@ -16,6 +16,6 @@ DATABASE = Settings.get("database")
 DATABASE_USER = Settings.get("database_user")
 DATABASE_PASSWORD = Settings.get("database_password")
 DEBUG = bool(int(Settings.get("debug")))
-DATABASE_URL = Settings.get("database_url")
+DATABASE_URL = "database"
 API_ROUTE = Settings.get("api_route")
 
