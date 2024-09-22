@@ -22,11 +22,6 @@ docker compose build
 docker compose up 
 ``` 
 
-При этом будет доступен сайт микроблогов на http://localhost
-API для сайта http://localhost/api или http://localhost:8000
-Документация OpenAPI для API доступна на http://loclhost/api/docs  
-
-
 ### Наполнение базы данных записями
 
  Вы можете быстро заполнить запущенную базу данных тестовой информацией для просмотра фрона+бэкенда.
@@ -40,6 +35,10 @@ python3 tests/generate_db.py
 ```
 В результате БД заполниться тестовыми сущностями, и выведется сообщение с доступными  ключами (api-key) пользователей
 
+
+При этом будет доступен сайт микроблогов на http://localhost
+API для сайта http://localhost/api или http://localhost:8000
+Документация OpenAPI для API доступна на http://loclhost/api/docs  
 
 ### Конечные точки API
 
