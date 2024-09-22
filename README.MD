@@ -7,7 +7,11 @@
 - установленное ПО для контейнеризации - [Docker](https://docs.docker.com/engine/install/).
 - установленные ПО для запуска многоконтейнерных приложений - [Docker-compose](https://docs.docker.com/compose/)
 
-1. Создайте на основе файла **.env.template** файл **.env** в корне проекта. 
+1. Создайте на основе файла **.env.template** файл **.env** в корне проекта.
+2. Создайте директорию указанную в переменной .env DATABASE_PATH
+```shell
+mkdir {{DATABASE_PATH}}
+```
 2. Находясь в директории проекта выполните команду: 
 ```shell 
 docker compose build 
