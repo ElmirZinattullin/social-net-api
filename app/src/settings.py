@@ -3,10 +3,10 @@ from pydantic import Field
 
 
 class APISettings(BaseSettings):
+    database: str
     database_user: str
     database_password: str
     debug: str = "0"
-    database_url: str
     api_route: str = ""
 
 Settings = APISettings().model_dump()
