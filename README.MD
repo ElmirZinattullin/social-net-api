@@ -10,12 +10,12 @@
 1. Создайте на основе файла **.env.template** файл **.env** в корне проекта. 
 2. Находясь в директории проекта выполните команду: 
 ```shell 
-$docker compose build 
+docker compose build 
 ``` 
 3. Дождитесь установки.  
 4. Выполните команду:
 ```shell 
-$docker compose up 
+docker compose up 
 ``` 
 
 При этом будет доступен сайт микроблогов на http://localhost
