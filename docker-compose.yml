@@ -26,9 +26,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      - log_destination=stderr
-      - logging_collector=on
-      - log_directory=log/
+
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_USER=${DATABASE_USER}
       - POSTGRES_DB=${DATABASE}
