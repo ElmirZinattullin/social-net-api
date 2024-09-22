@@ -7,10 +7,16 @@
 - установленное ПО для контейнеризации - [Docker](https://docs.docker.com/engine/install/).
 - установленные ПО для запуска многоконтейнерных приложений - [Docker-compose](https://docs.docker.com/compose/)
 
-1. Создайте на основе файла **.env.template** файл **.env** в корне проекта;  
-2. Находясь в директории проекта выполните команду ```$docker compose build ```;  
-3. Дождитесь установки;  
-4. Выполните команду ```$docker compose up```
+1. Создайте на основе файла **.env.template** файл **.env** в корне проекта. 
+2. Находясь в директории проекта выполните команду: 
+```shell 
+$docker compose build 
+``` 
+3. Дождитесь установки.  
+4. Выполните команду:
+```shell 
+$docker compose up 
+``` 
 
 При этом будет доступен сайт микроблогов на http://localhost
 API для сайта http://localhost/api или http://localhost:8000
