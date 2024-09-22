@@ -3,7 +3,6 @@ from pydantic import Field
 
 
 class APISettings(BaseSettings):
-    database: str
     database_user: str
     database_password: str
     debug: str = "0"
